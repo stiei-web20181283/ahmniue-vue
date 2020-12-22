@@ -1,20 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-/* Layout */
-// import Layout from '../views/layout/Layout'
-
+// import Layout from '../components/layout/Layout'
 const componentContext = require.context('./modules', false, /.js$/)
 const modules = componentContext.keys().reduce((result, fileName) => {
   result = [ ...result, ...componentContext(fileName).default ]
   return result
 }, {})
 Vue.use(Router)
+export const routers = [...modules]
 const router = new Router({
   mode: 'history',
   base: '/ahmniue',
-  routes: [
-    ...modules
-  ],
+  routes: routers,
   scrollBehavior: () => ({ y: 0 })
 })
 router.afterEach((to, from) => {
