@@ -6,10 +6,12 @@ import store from './store'
 import router from './router'
 import 'normalize.css/normalize.css'
 import 'vant/lib/index.css'
-import { Tabbar, TabbarItem } from 'vant'
+import './assets/font/ahmniue-icon/iconfont.css'
+import { Tabbar, TabbarItem, Icon } from 'vant'
 
-Vue.use(Tabbar)
+Vue.use(Tabbar) // 导航栏组件
 Vue.use(TabbarItem)
+Vue.use(Icon) // 图标组件
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */

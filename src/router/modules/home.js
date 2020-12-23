@@ -6,7 +6,7 @@ export default [
     path: '',
     component: Layout,
     redirect: '/home',
-    meta: { title: '首页', icon: '', index: 0 },
+    meta: { title: '首页', icon: 'home', index: 0 },
     children: [{
       path: 'home',
       name: 'Home',
@@ -18,7 +18,7 @@ export default [
     path: '/recommendPage',
     component: Layout,
     name: 'RecommendPage',
-    meta: { title: '推荐', icon: '', index: 1 },
+    meta: { title: '推荐', icon: 'recommend', index: 1 },
     children: [
       {
         path: 'recommend',
@@ -38,7 +38,7 @@ export default [
     path: '/productPage',
     component: Layout,
     name: 'productPage',
-    meta: { title: '商品', icon: '', index: 2 },
+    meta: { title: '商品', icon: 'all', index: 2 },
     children: [
       {
         path: 'product',
@@ -52,7 +52,7 @@ export default [
     path: '/cartPage',
     component: Layout,
     name: 'cartPage',
-    meta: { title: '购物车', icon: '', index: 3 },
+    meta: { title: '购物车', icon: 'cart', index: 3 },
     children: [
       {
         path: 'cart',
@@ -66,7 +66,7 @@ export default [
     path: '/userPage',
     component: Layout,
     name: 'userPage',
-    meta: { title: '我的', icon: '', index: 4 },
+    meta: { title: '我的', icon: 'account', index: 4 },
     children: [
       {
         path: 'user',

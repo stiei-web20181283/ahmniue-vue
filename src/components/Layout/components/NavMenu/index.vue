@@ -1,26 +1,27 @@
 <template>
-  <div>
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item icon="good-job-o">推荐</van-tabbar-item>
-      <van-tabbar-item icon="apps-o">分类</van-tabbar-item>
-      <van-tabbar-item icon="cart-o">购物车</van-tabbar-item>
-      <van-tabbar-item icon="user-o">我的</van-tabbar-item>
-
-      <!-- <van-tabbar-item icon="home-o">首页</van-tabbar-item> -->
-
+  <div class="nav-menu">
+    <!-- 导航菜单 -->
+    <van-tabbar route fixed v-model="active" active-color="#274A43" inactive-color="#CECECE">
+      <van-tabbar-item v-for="item in routes" :key="item.index"
+        :to="item.path + '/' + item.children[0].path"
+        > <!-- :icon="item.meta.icon" -->
+        <span>{{item.meta.title}}</span>
+        <template #icon>
+          <van-icon size="1.5rem" class="ahmniueicon" class-prefix='icon' :name="item.meta.icon"></van-icon>
+        </template>
+      </van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
 <script>
-// import MenuItem from './MenuItem'
+import MenuItem from './MenuItem'
 import { mapGetters } from 'vuex'
 import { Tabbar, TabbarItem } from 'vant'
 
 export default {
   name: 'NavMenu',
   components: {
-    // MenuItem,
+    MenuItem,
     Tabbar,
     TabbarItem
   },
@@ -40,3 +41,8 @@ export default {
   }
 }
 </script>
+<style rel="stylesheet/scss" lang="scss" scoped>
+  .nav-menu{
+    font-weight: bold;
+  }
+</style>
