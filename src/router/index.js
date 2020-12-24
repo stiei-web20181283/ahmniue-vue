@@ -9,7 +9,7 @@ const modules = componentContext.keys().reduce((result, fileName) => {
 Vue.use(Router)
 export const routers = [...modules]
 const router = new Router({
-  mode: 'history',
+  // mode: 'history',
   base: '/ahmniue',
   routes: routers,
   scrollBehavior: () => ({ y: 0 })
