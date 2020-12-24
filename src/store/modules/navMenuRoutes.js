@@ -2,13 +2,11 @@ import { routers } from '@/router/index'
 
 const state = {
   routes: routers
-  // addRouters: []
 }
 
 const mutations = {
   SET_ROUTES: (state, routes) => {
-    state.routes = routers
-    // state.addRouters = routers.concat(routes)
+    state.routes = routes
   }
 }
 

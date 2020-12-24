@@ -4,6 +4,7 @@ import Router from 'vue-router'
 const componentContext = require.context('./modules', false, /.js$/)
 const modules = componentContext.keys().reduce((result, fileName) => {
   result = [ ...result, ...componentContext(fileName).default ]
+  // console.log(...componentContext(fileName).default)
   return result
 }, {})
 Vue.use(Router)

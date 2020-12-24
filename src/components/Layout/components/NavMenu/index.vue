@@ -2,14 +2,16 @@
   <div class="nav-menu">
     <!-- 导航菜单 -->
     <van-tabbar route fixed v-model="active" active-color="#274A43" inactive-color="#CECECE">
-      <van-tabbar-item v-for="item in routes" :key="item.index"
-        :to="item.path + '/' + item.children[0].path"
-        > <!-- :icon="item.meta.icon" -->
-        <span>{{item.meta.title}}</span>
-        <template #icon>
-          <van-icon size="1.5rem" class="ahmniueicon" class-prefix='icon' :name="item.meta.icon"></van-icon>
-        </template>
-      </van-tabbar-item>
+      <template  v-for="item in routes">
+        <van-tabbar-item :key="item.index" v-if="item.children"
+          :to="item.path + '/' + item.children[0].path"
+          > <!-- :icon="item.meta.icon" -->
+          <span>{{item.meta.title}}</span>
+          <template #icon>
+            <van-icon size="1.5rem" class="ahmniueicon" class-prefix='icon' :name="item.meta.icon"></van-icon>
+          </template>
+        </van-tabbar-item>
+      </template>
     </van-tabbar>
   </div>
 </template>
@@ -42,7 +44,7 @@ export default {
 }
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped>
-  .nav-menu{
-    font-weight: bold;
-  }
+  // .nav-menu{
+  //   font-weight: bold;
+  // }
 </style>

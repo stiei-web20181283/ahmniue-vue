@@ -38,7 +38,7 @@ export default [
     path: '/productPage',
     component: Layout,
     name: 'productPage',
-    meta: { title: '商品', icon: 'all', index: 2 },
+    meta: { title: '分类', icon: 'all', index: 2 },
     children: [
       {
         path: 'product',

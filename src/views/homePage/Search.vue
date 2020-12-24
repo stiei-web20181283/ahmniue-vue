@@ -1,12 +1,13 @@
 <template>
   <div>
-    <search-bar icon-left="scan" background="#274A43" color="#fff" action @search="search"></search-bar>
+    <search-bar icon-left="arrow-left" background="#ccc" color="#000" action text @search="search"
+    @left-action="goBack">搜索</search-bar>
   </div>
 </template>
 <script>
 import SearchBar from '@/components/searchBar'
 export default {
-  name: 'home',
+  name: 'searchPage',
   components: {
     SearchBar
   },
@@ -22,16 +23,14 @@ export default {
 
   },
   created () {
-
+    this.value = this.$route.query.value
   },
   methods: {
+    goBack () {
+      history.go(-1)
+    },
     search (val) {
-      this.$router.push({
-        name: 'search',
-        query: {
-          value: val
-        }
-      })
+      this.value = val
     }
   }
 }
