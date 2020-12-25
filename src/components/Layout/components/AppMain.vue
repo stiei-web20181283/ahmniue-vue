@@ -18,3 +18,8 @@ export default {
   }
 }
 </script>
+<style rel="stylesheet/scss" lang="scss" scoped>
+ .app-main{
+  font-size: 14px;
+ }
+</style>

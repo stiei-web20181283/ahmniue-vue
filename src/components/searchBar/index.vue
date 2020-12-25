@@ -15,7 +15,7 @@
       <template #action>
         <div class="right-icon">
             <template v-if="text"><span @click="onSearch(value)"><slot></slot></span></template>
-            <template v-else><van-icon :name="iconRight" :color="color"/></template>
+            <template v-else><van-icon :name="iconRight" :color="color" @click="rightAction"/></template>
         </div>
       </template>
     </van-search>
@@ -64,6 +64,12 @@ export default {
         return Function
       }
     },
+    rightIconAction: {
+      type: Function,
+      default: () => {
+        return Function
+      }
+    },
     searchAction: {
       type: Function,
       default: () => {
@@ -100,6 +106,9 @@ export default {
     leftAction () {
       this.$emit('left-action', this.leftIconAction())
     },
+    rightAction () {
+      this.$emit('right-action', this.rightIconAction())
+    },
     focusAction () {
       this.$emit('focus', this.focus())
     }
@@ -123,8 +132,14 @@ export default {
       // }
       .van-search__action{
         padding: 0 .8rem;
-        .right-icon .van-icon{
+        &:active{
+          background-color: inherit;
+        }
+        .right-icon {
+          display: flex;
+          .van-icon{
             font-size: 1.275rem;
+          }
         }
       }
     }

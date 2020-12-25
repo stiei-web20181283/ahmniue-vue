@@ -44,7 +44,7 @@ export default {
 }
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped>
-  // .nav-menu{
-  //   font-weight: bold;
-  // }
+  .nav-menu{
+    height: 50px;
+  }
 </style>
